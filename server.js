@@ -7,17 +7,19 @@ app.use(cors())
 
 console.log(__dirname)
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html')
-})
+app.use(express.static(`${__dirname}/public`))
 
-app.get('/css', (req, res) => {
-    res.sendFile(__dirname + "/public/styles.css")
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/public/index.html')
+// })
 
-app.get('/js', (req, res) => {
-    res.sendFile(__dirname + "/public/main.js")
-})
+// app.get('/css', (req, res) => {
+//     res.sendFile(__dirname + "/public/styles.css")
+// })
+
+// app.get('/js', (req, res) => {
+//     res.sendFile(__dirname + "/public/main.js")
+// })
 
 app.listen(4000, () => {
     console.log("app is up on 4000")
